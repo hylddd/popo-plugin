@@ -12,31 +12,16 @@ OnMessage(DllCall("RegisterWindowMessage", "str", "SHELLHOOK"), "ShellEvent")
 
 
 ShellEvent(wParam, lParam) {
-    team_white_list := ["A平台服务部 - 兴趣组", "2013年7月web新人 - 兴趣组"]
+    if (wParam = 0x8006 or wParam = 0x8004)
+	{   ; lParam contains the ID of the window which flashed:
 
-    if (wParam = 0x8006) ; HSHELL_FLASH
-    {   ; lParam contains the ID of the window which flashed:
-
-	WinGetTitle, win_title, ahk_id %lParam%
-	WinGetClass, win_class, ahk_id %lParam%
-	if (win_class = "SessionForm")
-	{
-		; MsgBox, %win_title%, %win_class%
-		run pythonw "Z:/popo-plugin/win-notify.py" "%win_title%"
-	}
-
-	if (win_class = "TeamForm")
-	{
-		
-		for i, element in team_white_list 
-                {
-		    ; MsgBox, %win_title%, %win_class%, %element%
-		    if (element = win_title) {
-			    run pythonw "Z:/popo-plugin/win-notify.py" "%win_title%"
-		    }
-		}
-	}
- 
+		WinGetTitle, win_title, ahk_id %lParam%
+		WinGetClass, win_class, ahk_id %lParam%
+		if (win_class = "SessionForm" or win_class = "TeamForm")
+		{
+			; MsgBox, %win_title%, %win_class%
+			run pythonw "C:/programs/popo-notify/win-notify.py" "%win_title%" "%wParam%"
+		} 
     }
 }
 
