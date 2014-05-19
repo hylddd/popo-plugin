@@ -7,6 +7,9 @@ Python实现的网易泡泡外挂，用于通知虚拟机外的Linux
 
 ## 使用方法
 
+
+0.修改notifier.py中头像图片avatar.png的路径。
+
 1.在linux下运行 python notifier.py。
 
 2.在windows下安装python2.7，地址是http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi。
