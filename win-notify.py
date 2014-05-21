@@ -12,11 +12,12 @@ LINUX_HOST = "10.0.2.2"
 PORT = 34567
 
 
-def notify_linux(host, title, port=80):
+def notify_linux(host, title, action, port=80):
     try:
         title = title.encode('utf8')
+        action = action.encode('utf8')
         conn = httplib.HTTPConnection(host, port)
-        query = {'title': title, }
+        query = {'title': title, 'action': action}
         url = '/' + "?" + urllib.urlencode(query)
         conn.request('GET', url)
         return conn.getresponse()
@@ -26,7 +27,7 @@ def notify_linux(host, title, port=80):
 
 def main():
     print sys.argv
-    notify_linux(LINUX_HOST, sys.argv[1].decode("gbk"), PORT)
+    notify_linux(LINUX_HOST, sys.argv[1].decode("gbk"), sys.argv[2].decode("gbk"), PORT)
 
 
 if __name__ == '__main__':
