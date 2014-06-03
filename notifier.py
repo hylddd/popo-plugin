@@ -17,7 +17,7 @@ import tornado.ioloop
 import tornado.web
 from gi.repository import Notify
 
-action_focus='32772'
+action_focus='4'
 action_flash='32774'
 
 class Record(object):
