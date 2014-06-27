@@ -20,7 +20,7 @@ Python实现的网易泡泡外挂，用于通知虚拟机外的Linux
 
 5. 修改AutoHotKey.ahk里面的win-notify.py的路径。
 
-6. 将AutoHotKey.ahk载入到AutoHotKey中，让AutoHotKey开机自动运行。
+6. 将AutoHotKey.ahk & ListWindows.ahk载入到AutoHotKey中，让AutoHotKey开机自动运行。
 
 
 ## Tips
