@@ -19,6 +19,7 @@ from gi.repository import Notify
 
 action_focus='32772'
 action_flash='32774'
+action_windows='windows'
 
 class Record(object):
     def __init__(self, count, last_action):
@@ -49,10 +50,15 @@ def watcher():
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
+        global unread_set
         now = datetime.datetime.now()
         title = self.get_argument('title')
         action = self.get_argument('action')
-        # print title, action
+
+        if action == action_windows:
+            unread_set &= set(title.split(u'\n'))
+            return
+
         record = db[title]
 
         if action == action_flash:
