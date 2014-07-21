@@ -12,7 +12,7 @@ OnMessage(DllCall("RegisterWindowMessage", "str", "SHELLHOOK"), "ShellEvent")
 
 
 ShellEvent(wParam, lParam) {
-    if (wParam = 0x8006 or wParam = 0x04)
+    if (wParam = 0x8006 or wParam = 0x8004)
 	{   ; lParam contains the ID of the window which flashed:
 
 		WinGetTitle, win_title, ahk_id %lParam%
