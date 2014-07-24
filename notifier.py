@@ -38,7 +38,7 @@ last_notify_time = datetime.datetime(2000, 1, 1)
 def popo_notify(content):
     global last_notify_time
     last_notify_time = datetime.datetime.now()
-    Hello = Notify.Notification.new("主人，您有了新的泡泡消息", content, "/home/dd/workspace/popo-plugin/avatar.png")
+    Hello = Notify.Notification.new("主人，您有了新的泡泡消息", content, "dialog-information")
     Hello.show()
 
 def watcher():
