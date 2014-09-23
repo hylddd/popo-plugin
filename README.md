@@ -8,11 +8,13 @@ Python实现的网易泡泡外挂，用于通知虚拟机外的Linux
 ## 使用方法
 
 
-1. 在Linux下运行 python notifier.py。
+1. 在Linux下运行
+
+    python notifier.py
 
 2. 在Windows下安装[Python2.7](http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi)
 
-3. 安装Dependency目录下的AutoHotKey.exe。或者去官网下载最新的。
+3. 安装Dependency目录下的AutoHotKey.exe。或者去[官网](http://www.autohotkey.com/)下载最新版本。
 
 4. 修改win-notify.py文件，将LINUX_HOST后的ip地址改为你本机linux的ip地址。
 
